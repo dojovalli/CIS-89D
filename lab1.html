@@ -10,23 +10,33 @@ header, article, section, aside, footer, nav {
 	display: block;
 }
 /*/ Reset default padding and margin so that we have controll */
-figure, aside, form, h1, h2, h3, h4, h5, h6 {
+body, figure, aside, form, h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
 }
 
 /* Body Override Styles */
 body {
-	text-align:center;
-	margin: 0 25 auto;
-	color: #FFF;
 	background-color: #000;
+	margin: 0 auto;
+	color: #FFF;
 	min-width: 840px;
 	max-width: 1000px;
 }
 
-
-
+h1, h2, h3 {
+	text-align: left;
+}
+header {
+	clear: both;
+}
+article {
+	clear: both;
+	margin: 0 auto;
+}
+section {
+	margin: 0 auto;
+}
 
 /* GENERIC STYLE SHORT_CUTS */
 .padW10 {
@@ -44,8 +54,9 @@ body {
 .large {
 	font-size:36px;
 }
-.center {
-	
+.centerContainer {
+	margin: 0 auto;
+	text-align: center;
 }
 .pageWidth {
 	margin-bottom: 25;	
@@ -80,6 +91,7 @@ figure {
 
 .photo {
 	width: 600px;
+	margin: 0 auto;
 }
 
 /* Page-Specific Elements */
@@ -100,20 +112,20 @@ figure {
 }
 
 #siliconValleyBanner {
-	margin: 10 auto;
 	min-width: 600px;
 	max-width: 1000px;
-	/*background-color: #09C;*/
-	
 }
 #pitch {
-	margin: 0 auto;
-	/*background-color: #096;*/
+	min-width: 600px;
+	max-width: 1000px;
+	margin: 10 auto;
+	background-color: #096;
 }
 #pitchText {
 	max-width: 580px;
 	min-width: 300px;
 	padding: 10px;
+	text-align: left;
 }
 
 
@@ -123,63 +135,72 @@ figure {
 
 <body>
     <header>
-    <hgroup>
-    	<div class="logo left">
-    		<img src="public_assets/lab1/hbo_logo.png" width="360" height="270" alt="HBO logo">
-        </div>
-        <div class="pageTitle">
-            <h1 class="right">Silicon Valley</h1><br clear="all" />
-            <h2 class="right">Season 2.0.1</h2>
-        </div>
-    </hgroup>
+        <hgroup>
+            <div class="logo left">
+                <img src="public_assets/lab1/hbo_logo.png" width="360" height="270" alt="HBO logo">
+            </div>
+            <div class="pageTitle">
+                <h1 class="right">Silicon Valley</h1><br clear="all" />
+                <h2 class="right">Season 2.0.1</h2>
+            </div>
+        </hgroup>
     </header>
 
-<br clear:"both" />
+<br clear:"all">
 
-    <article id="siliconValleyReturns">
-        <figure id="siliconValleyBanner">
-        	<img src="public_assets/lab1/siliconValleyBanner.jpg" width="820" height="388" alt="Silicon Vally Banner">
-        </figure>
+    <article id="siliconValleyReturns" class="centerContainer">
+        
     
-        <section id="pitch">
-        	<div id="pitchText" class="left">
-                <h2>Hit Series return September 22nd!</h2>
-                <p>
-                The nerds of Silicon Valley return this Fall to HBO with new version problems.
-                Their victory at Tech-Crunch Disrupt have set the standards high and now Richard Hendricks
-                is faced with decisions that effect everyone he cares about.
-                </p>
-                <p>
-                Building apps is hard, but building a company projected at a multi-Billion dollar value is hard in epic proportions.
-                Who would have thought a company like PidedPiper could compete with the big guys like Hooli?
-                </p>
-                <p>
-                Erlich Bachmann, Dinesh, Peter Gregory and Jared Dunn support Richard through his topsy-turvy adventure. Spirits are
-                high, and so is some of the help. This rag-tag team wants to roll 'High Roller' style, but breaking into the rich and
-                famous crowd is no easy task.
-                </p>
-            </div><!-- End of #pitchText -->
-            
-            <aside class="ad left roundedCorners">
-                <h3>OWN IT NOW!</h3>
-                <figure id="season1_DVD">
-                <div id="dvdSaleImg">
-                	<!--<img src="/public_assets/lab1/Season_1_DVD.jpg" />-->
-                </div>
-                <div class="dvdSales">
-                    <p>Season 1 - DVD package of HBO's hit series Silicon Valley</p>
-                    
-                    <a href="https://itunes.apple.com/us/tv-season/silicon-valley-season-1/id849050573">Buy on iTunes</a> - $19.99<br />
-                    <a href="https://play.google.com/store/tv/show/Silicon_Valley?id=Y5cw5EDM0bk&hl=en">Buy on GooglePlay</a> - $14.99<br />
-                    <form action="http://www.hbo.com/silicon-valley">
-                        <button id="purchase_SV_s1" value="Add to Cart">Add to Cart</button>
-                    </form>
-                </div><!-- End of .figureText -->
+        <section id="pitch" class="character">
+        	<br clear="all">
+        	
+                <figure id="siliconValleyBanner">
+                    <img src="public_assets/lab1/siliconValleyBanner.jpg" width="820" height="388" alt="Silicon Vally Banner">
                 </figure>
-            </aside>
+                
+            <div id="pitchContent" class="character"> 
+            <br clear="all">
+                <div id="pitchText" class="left">
+                    <h2>Hit Series return September 22nd!</h2>
+                    <p>
+                    The nerds of Silicon Valley return this Fall to HBO with new version problems.
+                    Their victory at Tech-Crunch Disrupt have set the standards high and now Richard Hendricks
+                    is faced with decisions that effect everyone he cares about.
+                    </p>
+                    <p>
+                    Building apps is hard, but building a company projected at a multi-Billion dollar value is hard in epic proportions.
+                    Who would have thought a company like PidedPiper could compete with the big guys like Hooli?
+                    </p>
+                    <p>
+                    Erlich Bachmann, Dinesh, Peter Gregory and Jared Dunn support Richard through his topsy-turvy adventure. Spirits are
+                    high, and so is some of the help. This rag-tag team wants to roll 'High Roller' style, but breaking into the rich and
+                    famous crowd is no easy task.
+                    </p>
+                </div><!-- End of #pitchText -->
+                
+                <aside class="ad left roundedCorners">
+                    <h3>OWN IT NOW!</h3>
+                    <figure id="season1_DVD">
+                    <div id="dvdSaleImg">
+                        <!--<img src="/public_assets/lab1/Season_1_DVD.jpg" />-->
+                    </div>
+                    <div class="dvdSales">
+                        <p>Season 1 - DVD package of HBO's hit series Silicon Valley</p>
+                        
+                        <a href="https://itunes.apple.com/us/tv-season/silicon-valley-season-1/id849050573">Buy on iTunes</a> - $19.99<br />
+                        <a href="https://play.google.com/store/tv/show/Silicon_Valley?id=Y5cw5EDM0bk&hl=en">Buy on GooglePlay</a> - $14.99<br />
+                        <form action="http://www.hbo.com/silicon-valley">
+                            <button id="purchase_SV_s1" value="Add to Cart">Add to Cart</button>
+                        </form>
+                    </div><!-- End of .figureText -->
+                    </figure>
+                </aside>
+                <br clear="both" />
+            </div><!-- End of #pitchContent -->
             <br clear="both" />
         </section>
     
+    <br clear:"all">
     	<section id="characters">
             <h2 class="padW10">Characters</h2>
             

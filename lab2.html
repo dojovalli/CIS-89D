@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+<style type="text/css">
+
+/* Style Resets */
+* {
+margin: 0px;
+padding: 0px;
+}
+h1 {
+font: bold 20px verdana, sans-serif;
+}
+h2 {
+font: bold 14px verdana, sans-serif;
+}
+header, section, footer, aside, nav, article, figure, figcaption, hgroup{
+display: block;
+}
+ul {
+	list-style-type: none;
+}
+p {
+	margin: 10px auto;
+}
+
+/* Re-usable Quick Styles */
+.pageWidth {
+	max-width: 1000px;
+	min-width: 800px;
+}
+.pageAlignCenter {
+	margin: 0 auto;	
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.roundedCorners {
+	border-radius: 5px;
+}
+.m10 {
+	margin: 10px;
+}
+.mW10 {
+	margin: auto 10px;
+}
+.mH10 {
+	margin: 10px auto;
+}
+
+/* Page Layout */
+body {
+	background-color: #CCC;
+}
+header {
+	background-color: #09F;
+	min-height: 100px;
+}
+nav {
+	background-color: #F90;
+	min-height: 50px;
+}
+article {
+	
+}
+footer {
+	background-color: #F30;
+	min-height: 100px;
+}
+figure {
+	
+}
+figcaption {
+	padding: 10px;	
+}
+
+/* Layout Classes */
+.flexPage {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+}
+.verticalLinearLayout {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+	-moz-flex: 1;
+	-webkit-flex: 1;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+}
+.horizontalLinearLayout {
+	background-color: #099;
+	min-height: 250px;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+	-moz-flex-direction: row;
+	-webkit-flex-direction: row;
+}
+
+
+/* Appearence Classes */
+.ad {
+	padding: 10px;
+	min-width: 200px;
+	max-width: 200px;
+	background-color: #FC3;
+	text-align: center;
+}
+.character {
+	margin: 10px;
+	padding: 10px;
+}
+.Odd {
+	background-color: #39F;
+}
+.Even {
+	background-color: #F93;
+}
+.photo {
+	min-width: 580px;
+	max-width: 580px;
+}
+
+
+/* Appearence IDs */
+#pageWrapper {
+	background-color: #FFF;	
+}
+#pitchContent {
+	padding: 10px;
+}
+#siliconValleyBanner {
+	text-align: center;
+}
+
+
+</style>
+
+</head>
+
+<body class="flexPage pageWidth pageAlignCenter">
+
+	<div id="pageWrapper">
+    	
+        <header>
+        	<hgroup>
+                <div class="logo left">
+                    <img src="public_assets/lab1/hbo_logo.png" width="360" height="270" alt="HBO logo">
+                </div>
+                <div class="pageTitle">
+                    <h1 class="right">Silicon Valley</h1><br clear="all" />
+                    <h2 class="right">Season 2.0.1</h2><br clear="all" />
+                </div>
+            </hgroup>
+        </header>
+        
+        <nav>
+        	<ul>
+            	<a href="http://voyager.deanza.edu/~vallim/index.html"><li>Student Server</li></a>
+            	<a href="http://www.mattvalli.com/index.html"><li>Student Portfolio</li></a>
+                <a href="http://www.hbo.com"><li>HBO</li></a>
+            </ul>
+        </nav>
+        
+        <div id="container" class="verticalLinearLayout">
+        
+        	<article id="siliconValleyReturns">
+            
+                <section id="pitch">
+                    
+                        <figure id="siliconValleyBanner" class="pageAlignCenter">
+                            <img src="public_assets/lab1/siliconValleyBanner.jpg" width="820" height="388" alt="Silicon Vally Banner">
+                        </figure>
+                        
+                    <div id="pitchContent" class="horizontalLinearLayout roundedCorners m10"> 
+                        <div id="pitchText" class="left">
+                            <h2>Hit Series return September 22nd!</h2>
+                            <p>
+                            The nerds of Silicon Valley return this Fall to HBO with new version problems.
+                            Their victory at Tech-Crunch Disrupt have set the standards high and now Richard Hendricks
+                            is faced with decisions that effect everyone he cares about.
+                            </p>
+                            <p>
+                            Building apps is hard, but building a company projected at a multi-Billion dollar value is hard in epic proportions.
+                            Who would have thought a company like PidedPiper could compete with the big guys like Hooli?
+                            </p>
+                            <p>
+                            Erlich Bachmann, Dinesh, Peter Gregory and Jared Dunn support Richard through his topsy-turvy adventure. Spirits are
+                            high, and so is some of the help. This rag-tag team wants to roll 'High Roller' style, but breaking into the rich and
+                            famous crowd is no easy task.
+                            </p>
+                        </div><!-- End of #pitchText -->
+                        
+                        <aside class="ad roundedCorners">
+                            <h3>OWN IT NOW!</h3>
+                            <figure id="season1_DVD">
+                            <div id="dvdSaleImg">
+                            	<img src="public_assets/lab1/Season_1_DVD.jpg" width="100" height="100" alt="Silicon Valley - Season 1 - DVD Set" />
+                            </div><!-- End of #dvdSaleImg -->
+                            <div class="dvdSales">
+                                <p>Season 1 - DVD package of HBO's hit series Silicon Valley</p>
+                                
+                                <a href="https://itunes.apple.com/us/tv-season/silicon-valley-season-1/id849050573">Buy on iTunes</a> - $19.99<br />
+                                <a href="https://play.google.com/store/tv/show/Silicon_Valley?id=Y5cw5EDM0bk&hl=en">Buy on GooglePlay</a> - $14.99<br />
+                                <form action="http://www.hbo.com/silicon-valley">
+                                    <button id="purchase_SV_s1" value="Add to Cart">Add to Cart</button>
+                                </form>
+                            </div><!-- End of #dvdSales -->
+                            </figure>
+                        </aside>
+                    </div><!-- End of #pitchContent -->
+                </section>
+                
+                <section id="characters">
+                    <h2 class="pW10">Characters</h2>
+                    
+                    <!-- Character - Richard Henderson -->
+                    <figure id="richardHenderson" class="character Odd roundedCorners horizontalLinearLayout">
+                        <div class="photo left">
+                            <img class="figureImg" src="public_assets/lab1/Richard_Henderson.jpg" width="580" height="295" alt="Richard Henderson">
+                        </div><!-- End of .photo -->
+                        <figcaption>
+                        <h3>RICHARD HENDERSON</h3>
+                            <p>
+                            C.E.O and Founder of PidedPiper - a lossless compression format that is quickly revolutionizing the effect of 
+                            cloud computing.
+                            </p>
+                        </figcaption>
+                    </figure>
+                    
+                    <!-- Character - Erlich Bachmann -->
+                    <figure id="erlichBachmann" class="character Even roundedCorners horizontalLinearLayout">
+                    	
+                        <figcaption>
+                            <h3>ERLICH BACHMANN</h3>
+                            <p>
+                            Partner with Richard, Erlich Bachmann's confidence and eccentric character fill the void of Richard's doubts.
+                            Although Bachmann is often far out there, he often has moments of brillance and inspiration.
+                            </p>
+                        </figcaption>
+                    
+                        <div class="photo left">
+                            <img class="figureImg" src="public_assets/lab1/Erlich_Bachmann.jpg" width="580" height="328">
+                        </div><!-- End of .photo -->
+                        
+                    </figure>
+                    
+                    <!-- Character - Jared Dunn -->
+                    <figure id="JaredDunn" class="character Odd roundedCorners horizontalLinearLayout">
+                        <div class="photo left">
+                            <img class="figureImg" src="public_assets/lab1/Jared_Dunn.jpg" width="580" height="328" alt="Jared Dunn">
+                        </div><!-- End of .photo -->
+                        
+                        <figcaption>
+                            <h3>JARED DUNN</h3>
+                            <p>
+                            A business brain but social outcast, Jared Dunn might have found a group of friends that actually appriciates his 
+                            awkward shortcomings.
+                            </p>
+                        </figcaption>
+                    </figure>
+                    
+                    <!-- Character - Denish -->
+                    <figure id="Denish" class="character Even roundedCorners horizontalLinearLayout">
+                        
+                        <figcaption>
+                            <h3>DENISH</h3>
+                            <p>
+                            Software Engineer for PidedPiper that has lust for many women. His inexperience with women is on the cusp of
+                            of something great. Often has confilcts with Gilfoyle.
+                            </p>
+                        </figcaption>
+                        
+                        <div class="photo left">
+                            <img class="figureImg" src="public_assets/lab1/Denish.jpg" width="580" height="328" alt="Denish">
+                        </div><!-- End of .photo -->
+                        
+                    </figure>
+                    
+                    <!-- Character - Gilfoyle -->
+                    <figure id="Gilfoyle" class="character Odd roundedCorners horizontalLinearLayout">
+                        <div class="photo left">
+                            <img class="figureImg" src="public_assets/lab1/Gilfoyle.jpg" width="580" height="328">
+                        </div><!-- End of .photo class -->
+                        <figcaption>
+                            <h3>GILFOYLE</h3>
+                            <p>
+                            Dry, crass, and demonic, Gilfoyle lightens the mood with his sarcastic humor.
+                            </p>
+                        </figcaption>
+                    </figure>
+                    
+                </section>
+			</article>
+        
+        </div><!-- end of container -->
+    	
+        <footer>
+        	<h3 class="large">Beta's over!</h3>
+            <a href="http://voyager.deanza.edu/~vallim/index.html">DeAnza College - Student Server - Matt Valli - Home</a>
+            <br>
+        </footer>
+ 
+    </div><!-- end of wrapper -->
+    
+</body>
+</html>
