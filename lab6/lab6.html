@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+<link href="../jquery-ui-1.11.1/jquery-ui.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<h1>TASKS</h1>
+<div id="tabs">
+    <ul>
+    	<li><a href="#tabs-1">Daily Tasks</a></li>
+		<li><a href="#tabs-2">Fruits</a></li>
+		<li><a href="#tabs-3">Vegetables</a></li>
+    </ul>
+    
+	<div id="tabs-1">
+    	<h3>Daily Tasks</h3>
+    	<p>List of what to do</p>
+    </div>
+    
+    <div id="tabs-2">
+        <h2>List</h2>
+        <h4>Buy Fruits</h4>
+        
+        <ul>
+            <li class="treeBearedFruit">figs</li>
+            <li class="treeBearedFruit">peach</li>
+            <li class="treeBearedFruit">apricot</li>
+            <li class="plantBearedFruit">grapes</li>
+        </ul>
+    </div>
+    
+    <div id="tabs-3">
+    	List of vegetables
+        <ul>
+        	<li class="grnVege">green lettuce</li>
+            <li class="orgVege">orange</li>
+            <li class="grnVege">broccoli</li>
+            <li class="grnVege">spinach</li>
+        </ul>
+    </div>
+
+</div>
+
+<script src="../jquery-ui-1.11.1/external/jquery/jquery.js"></script>
+<script src="../jquery-ui-1.11.1/jquery-ui.js"></script>
+<script>
+	// Setup the Tabs
+	$('#tabs').tabs();
+	
+	// Prepend the 'Just Updated' text to the second tab
+	$('#tabs-2').prepend("<p>Just Updated<p>");
+	
+	// Add the plus sign to the first three list items in the second tab (using similar class)
+	$('#tabs-2 .treeBearedFruit').prepend("+ ");
+	
+	// Add the green color to the class for grnVeges
+	$('.grnVege').css('color', '#063');
+	
+	// Add the organge background-color to the class for orgVeges
+	$('.orgVege').css('background-color', '#F93');
+	
+	// Append the new list item to the list
+	$('#tabs-3 ul').append('<li class="redVege"><em>red</em> tomato</li>');
+	
+</script>
+
+</body>
+</html>

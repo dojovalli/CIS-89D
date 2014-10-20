@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lab 7</title>
+
+<script type="text/javascript" src="html5_video_controller.js"></script>
+<script type="text/javascript">
+	// Onload
+	window.onload = function(){
+	
+		setupVideoController();
+		// END ONLOAD FUNCTION
+	};
+</script>
+<style type="text/css">
+video {
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="video_container">
+    <video>
+        <source src="svs_700inches.mp4">
+    </video>
+</div><!-- End of #video_containter -->
+<div id="video_controller">
+    <button id="btn_play"> Play </button>
+    <button id="btn_pause"> Pause </button>
+    <input type="range" step="any" id="sld_seekbar">
+    <label id="time">-:--:--</label>
+    <input type="range" min="0" max="1" step="0.1" id="volume">
+    <button id="btn_mute"> Mute </button>
+</div><!-- End of #video_controller -->
+
+
+</body>
+</html>

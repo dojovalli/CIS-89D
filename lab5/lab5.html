@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="messageBox.js"></script>
+
+<link href="../_css/flexBoxModel.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+body {
+	background-color: #033;
+	margin: 0px auto;
+	text-align: center;	
+}
+h1 {
+	text-align: center;	
+}
+.messageBox {
+	margin: 10px;
+	padding: 10px;
+	background-color: #413C3B;
+	color: #FFF;
+	min-width: 450px;
+}
+.outerMessageBox {
+	margin: 0px;
+	padding: 5px;
+}
+.innerMessageBox {
+	text-align: left;
+}
+.messageTextArea {
+	background-color: #FFF;
+	margin: 20px;
+	min-width: 400px;
+	min-height: 150px;
+	border-radius: 10px;
+}
+.value {
+	
+}
+</style>
+
+</head>
+
+<body class="flexPage" onload="mainMessage()">
+
+<header>
+</header>
+
+<nav>
+</nav>
+
+<article id="messageBox" class="verticalLinearLayout messageBox">
+	<section id="outerMessageBox" class="outerMessageBox">
+    	<div id="innerMessageBox" class="innerMessageBox">
+        	<h1>My Message</h1>
+            <form action="#" method="post" >
+            	<textarea id="userMessage" class="messageTextArea" placeholder="Your message here..."></textarea>
+            </form>
+            <div id="characterCount" class="value">140/140 Characters</div><!-- End of #characterCount -->
+            <div id="ascCodeContainter">
+            	<div id="ascCode" class="value">N/A</div><!-- End of #ascCode -->
+            </div><!-- End of #ascCodeContainer -->
+        </div><!-- End of #innerMessageBox -->
+    </section><!-- End of #outerMessageBox -->
+</article>
+
+<footer>
+</footer>
+<script type="text/javascript">
+	document.getElementById('userMessage').addEventListener('keyup', mainMessage, false);
+</script>
+
+</body>
+</html>

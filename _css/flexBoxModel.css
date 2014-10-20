@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/* CSS Document - Reusable Flexible Box Model */
+
+/* Re-usable Quick Styles */
+.pageWidth {
+	max-width: 1000px;
+	min-width: 800px;
+}
+.pageAlignCenter {
+	margin: 0 auto;	
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.roundedCorners {
+	border-radius: 5px;
+}
+.m10 {
+	margin: 10px;
+}
+.mW10 {
+	margin: auto 10px;
+}
+.mH10 {
+	margin: 10px auto;
+}
+
+/* Page Layout */
+body {
+	background-color: #CCC;
+}
+header {
+	background-color: #09F;
+	min-height: 100px;
+}
+nav {
+	background-color: #F90;
+	min-height: 50px;
+}
+article {
+	
+}
+footer {
+	background-color: #F30;
+	min-height: 100px;
+}
+figure {
+	
+}
+figcaption {
+	padding: 10px;	
+}
+
+/* Layout Classes */
+.flexPage {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+}
+.verticalLinearLayout {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+	-moz-flex: 1;
+	-webkit-flex: 1;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+}
+.horizontalLinearLayout {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+	-moz-flex-direction: row;
+	-webkit-flex-direction: row;
+}
