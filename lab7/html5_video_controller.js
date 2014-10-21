@@ -1,5 +1,12 @@
 // JavaScript Document - HTML5 Video Controller
 
+// DEBUG
+var DEBUG = true;
+var GAPS = false;
+var NODES = false;
+var VOL = false;
+var BUF_VID = true;
+
 // MEMBERS
 var video;
 var unmutedVolume;
@@ -8,42 +15,12 @@ var passedEventLoopOnce = false;
 	// CONVENIENCE METHODS
 	// Sets up the Javascript references to the HTML5 Video Controller
 	function setupVideoController() {
-		// Set the Video Variable by selecting the first Video tag on the page
-		video = document.getElementsByTagName("video")[0];
 		
-		// Get References to the Video Controller Buttons
-		var btn_play = document.getElementById("btn_play");
-		var btn_pause = document.getElementById("btn_pause");
-		var btn_mute = document.getElementById("btn_mute");
-		var sld_volume = document.getElementById('volume');
+		video = setupVideo();
+		setupVideoControls();
 		
-		// Setup the Timeline
+		passedEventLoopOnce = true;
 		
-		// Add Event Listener to monitor the Timeline
-		video.addEventListener('timeupdate', updateTime, false);
-		video.addEventListener('durationchange', initsld_seekbar, false);
-		sld_seekbar.addEventListener('change', changeTime, false);
-		
-		// Add Event Listeners to the buttons
-		btn_play.addEventListener('click', doPlay, false);
-		btn_pause.addEventListener('click', doPause, false);
-		btn_mute.addEventListener('click', doMute, false);
-		
-		// Setup the volume button by first getting the current volume value, then set listener
-		sld_volume.value = video.volume;
-		// Set the Volume Button Listener using an Anonymous Function
-		sld_volume.addEventListener(	'change',
-										function(e) {
-											myVol= e.target.value;
-											video.volume=myVol;
-											if (myVol==0) {
-												video.muted = true;
-											} else {
-												video.muted = false;
-											}
-												return false;
-											}, 
-										true);
 	};
 	
 	// Setup Video
@@ -53,7 +30,7 @@ var passedEventLoopOnce = false;
 		
 		// Set Event Listeners
 		video.addEventListener('timeupdate', updateTime, false);
-		video.addEventListener('durationchange', initsld_seekbar, false);
+		video.addEventListener('durationchange', initSeekbar, false);
 		
 		return video;
 	}
@@ -62,9 +39,14 @@ var passedEventLoopOnce = false;
 	function setupVideoControls() {
 		
 		// Setup Controls Left to Right
+		if (DEBUG && GAPS) alert("Got to Buffer Alert before setupPlayButton()!");
 		setupPlayButton();
+		if (DEBUG && GAPS) alert("Got to Buffer Alert before setupPauseButton()!");
 		setupPauseButton();
+		if (DEBUG && GAPS) alert("Got to Buffer Alert before setupTimelineSlider()!");
 		setupTimelineSlider();
+		if (DEBUG && GAPS) alert("Got to Buffer Alert before setupVolumeSlider()!");
+		setupVolumeSlider();
 		setupMuteButton();
 		
 	}
@@ -93,9 +75,10 @@ var passedEventLoopOnce = false;
 	
 	// Sets up the Scrubable Timeline Slider
 	function setupTimelineSlider() {
-		
+		if (DEBUG && NODES) alert("Enter setupTimelineSlider()");
 		// Get Reference
-		var sld_seekbar = document.getElementById("btn_mute");
+		var sld_seekbar = document.getElementById("sld_seekbar");
+		
 		
 		// Determine if the Video is Streaming or a File
 		if ( isStreamingVideo() ) {
@@ -109,23 +92,26 @@ var passedEventLoopOnce = false;
 		// Setup Event Listeners
 		sld_seekbar.addEventListener('change', changeTime, false);
 		
-		return sld_seekbar;
+		if (DEBUG && NODES) alert("Exit setupTimelineSlider()");
+		//return sld_seekbar;
 	}
 	
 	// Sets up the Volume Slider
 	function setupVolumeSlider() {
+		if (DEBUG && NODES) alert("Enter setupVolumeSlider()");
 		// Get Reference
-		var sld_volume = document.getElementById('volume');
+		var sld_volume = document.getElementById('sld_volume');
 		
 		// Setup Event Listeners -- Using an Anonymous Function
 		// Setup the volume button by first getting the current volume value, then set listener
+		if (DEBUG && VOL) alert("video.volume: " + video.volume);
 		sld_volume.value = video.volume;
 		// Set the Volume Button Listener using an Anonymous Function
 		sld_volume.addEventListener(	'change',
 										function(e) {
-											myVol= e.target.value;
-											video.volume=myVol;
-											if (myVol==0) {
+												myVol= e.target.value;
+												video.volume = myVol;
+											if (myVol == 0) {
 												video.muted = true;
 											} else {
 												video.muted = false;
@@ -133,6 +119,7 @@ var passedEventLoopOnce = false;
 												return false;
 											}, 
 										true);
+		return sld_volume;
 	}
 	
 	
@@ -143,8 +130,6 @@ var passedEventLoopOnce = false;
 		
 		// Add Event Listener
 		btn_mute.addEventListener('click', doMute, false);
-		
-		return btn_mute;
 	}
 	
 	
@@ -175,14 +160,14 @@ var passedEventLoopOnce = false;
 		// If the volume is not muted, get the Current value of volume
 		if (video.muted != true) {
 			// Set the value of the unmutedVolume
-			unmutedVolume = document.getElementById('volume').value
+			unmutedVolume = document.getElementById('sld_volume').value;
 			
 			// Mute the Volume
-			document.getElementById('volume').value = 0;
+			document.getElementById('sld_volume').value = 0;
 			video.muted = true;
 		} else {
 			// Reset the volume to its previous value
-			document.getElementById('volume').value = unmutedVolume;
+			document.getElementById('sld_volume').value = unmutedVolume;
 			video.muted = false;
 		};
 		
@@ -191,6 +176,7 @@ var passedEventLoopOnce = false;
 	// TIMELINE METHODS
 	// Sets up the isStreamingVideo var
 	function isStreamingVideo() {
+		var isStreamingVideo;
 		
 		if (video.startTime == 0) {
 			isStreamingVideo = false;
@@ -199,13 +185,12 @@ var passedEventLoopOnce = false;
 		}
 		
 		if ( ! passedEventLoopOnce ) {
-			alert("video.startTime: " + video.startTime + "\n"
-					+ "isStreamingVideo: " + isStreamingVideo);
+			if (DEBUG && VOL) alert("video.startTime: " + video.startTime + "\n"
+								+ "isStreamingVideo: " + isStreamingVideo);
 		}
-		passedEventLoopOnce = true;
 		
 		return isStreamingVideo;
-	}
+	};
 	
 	// Updates the Time Label
 	function updateTime(){
@@ -221,31 +206,56 @@ var passedEventLoopOnce = false;
 		
 		
 		// Update the Values of the sld_seekbar
-		if ( ! isStreamingVideo ) {
+		if ( isStreamingVideo() ) {
+			// Get the Buffered video
+			var bufferedVideo = video.buffered;
+			
+			// Create loop to display all the TimeRanges in the bufferedVideo
+			var alertString = "Buffered Video" + "\n";
+			alertString += "length: " + bufferedVideo.length + "\n";
+			// Add to string for each TimeRange
+			for ( i = 0; i < bufferedVideo.length; i++ ) {
+				alertString += "start: " + bufferedVideo.start(i) + "\n"
+				alertString += "end: " + bufferedVideo.end(i) + "\n"
+			}
+			
+			// Alert all bufferedVideo TimeRanges
+			if (DEBUG && BUF_VID) alert( alertString );
+			
+			// Set the min and max duration/times
+			sld_seekbar.min = bufferedVideo.start(0);
+			sld_seekbar.max = bufferedVideo.end(0);
+			sld_seekbar.value = video.currentTime;
+		} else {
 			// Set the min and max duration/times
 			sld_seekbar.min = video.startTime;
 			sld_seekbar.max = video.duration;
 			sld_seekbar.value = video.currentTime;
-		}
+		} 
 		
 	};
 	
 	// Initializes the Seek Bar
 	function initSeekbar() {
+		if (DEBUG && NODES) alert("Enter initSeekbar()");
 		
 		if ( isStreamingVideo() ) {
 			// The video is streaming, hide the sld_seekbar and display 'Streaming Video...'
+			if (DEBUG && BUF_VID) alert("isStreamingVideo() == true");
 			
 		} else {
+			if (DEBUG && BUF_VID) alert("isStreamingVideo() == false");
 			// The video is a file
 			sld_seekbar.min = 0;
 			sld_seekbar.max = video.duration;
 			sld_seekbar.value = 0;		
 		}
-			
+		
+		if (DEBUG && NODES) alert("Exit initSeekbar()");
+		return;	
 	};
 	
 	// Updates the Cursor's position on the Seek Bar to match the current percentage
 	function changeTime() {
 		video.currentTime = sld_seekbar.value;
-	}
+	};
