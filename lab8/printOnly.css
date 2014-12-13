@@ -1,0 +1,55 @@
+/* CSS Document */
+
+@media print {
+	
+	/* Set the default settings for the page */
+	* {
+		color: #000;
+		font-family:"Times New Roman", Times, serif;
+		font-size: 12px;
+		background-color: #FFF;	
+	}
+	
+	/* OVERRIDE THE DEFAULTS */
+	/* Hide all images, navigation elements and both the header and footer */
+	header, nav, footer, img {
+		visibility: collapse;
+	}
+	
+	/* Adjust the font-size for headings for print */
+	h1 {
+		font-size: 24px;
+	}
+	h2 {
+		font-size: 18px;
+	}
+	h3 {
+		font-size: 16px;
+	}
+	
+	/* Attempt to keep the sections printed on the same page */
+	section h1, h2, h3 {
+		page-break-after: avoid;	
+	}
+	
+	/* Remove the Underline Style from Links */
+	a {
+		text-decoration: none;
+		font-weight: bold;
+	}
+	
+	/* Display links with there hidden URLs */
+	a:link:after, a:visited:after { content:" [" attr(href) "] "; }
+	
+	/* Add the ability to print images with the use of printable class */
+	.printable {
+		visibility: visible;
+	}
+	
+	/* Link Lists - Remove bullets */
+	.linkList ul {
+		list-style-type: none;
+	}
+	
+	
+}

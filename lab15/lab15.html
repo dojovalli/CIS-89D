@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+<style type="text/css">
+	body, h1, fieldset, legend, label {
+	}
+</style>
+
+</head>
+
+<body id="body">
+
+	<article>
+    	<h1>Select Your Preferences</h1>
+        <form id="pagePreferences" method="post" action="">
+        	<fieldset>
+            	<legend>Colors</legend>
+                <label>Background Color</label><br />
+                <input type="color" id="backgroundColor"  onchange="run()" value="#FFFF69" /><br />
+                
+                <label>Text Color</label><br />
+                <input type="color" id="textColor" onchange="run()" value="#3E0043" /><br />
+                
+                <label>Text Size</label><br />
+                <select id="textSize" onchange="run()">
+                	<option value="12px">12px</option>
+                    <option value="14px">14px</option>
+                    <option value="16px">16px</option>
+                    <option value="18px">18px</option>
+                    <option value="20px">20px</option>
+                    <option value="24px">24px</option>
+                    <option value="32px">32px</option>
+                    <option value="48px">48px</option>
+                </select>
+            </fieldset>
+            
+            <input type="submit" name="save" id="save" value="Save Changes" />
+        </form>
+    </article>
+
+<!--
+	<script type="application/javascript">
+		
+		
+		function initiate() {
+			console.log("Enter initiate()");
+			run();
+		}
+		
+		function run() {
+				console.log("Enter run()");
+				
+				bodyTag.style.backgroundColor = getValue("backgroundColor");
+				bodyTag.style.color = getValue("textColor");
+				bodyTag.style.fontSize = getSelectedValue("textSize");
+
+				
+				console.log("VALUES" + "\n"
+							+ "bodyTag.style.backgroundColor:" + bodyTag.style.backgroundColor + "\n"
+							+ "bodyTag.style.color:" + bodyTag.style.color + "\n"
+							+ "bodyTag.style.fontSize:" + bodyTag.style.fontSize + "\n");
+				console.log("Exit run()");
+		}
+		
+		function getValue(element) {
+			var elem = document.getElementById(element);
+			return elem.value;
+		}
+		
+		function getSelectedValue(element) {
+			var answer = document.getElementById(element);
+			return answer[answer.selectedIndex].value;
+		}
+	
+		window.addEventListener('load', initiate, false);
+	</script>
+    -->
+    <script type="application/javascript" src="webStorage.js"></script>
+</body>
+</html>

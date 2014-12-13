@@ -1,0 +1,101 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lab 11 - Canvas Animation</title>
+
+<link href="../jquery-ui-1.11.1/jquery-ui.css" rel="stylesheet">
+</head>
+
+<body>
+
+<section id="canvasbox">
+    <canvas id="canvas" width="410" height="300">
+    	Your browser doesn't support the canvas element
+    </canvas>
+</section>
+
+<script src="../jquery-ui-1.11.1/external/jquery/jquery.js"></script>
+<script src="../jquery-ui-1.11.1/jquery-ui.js"></script>
+<script>
+// DEBUGGING 
+var DEBUG = false;
+var PASSED_LOOP = false;
+
+// Global Variables
+var ctx;
+var x = ( $("#canvas").width() / 2 );
+var y = ( $("#canvas").height() / 2 );
+var CIRCLE_RADIUS = 10;
+var dx = 2;
+var dy = 4;
+var WIDTH;
+var HEIGHT;
+var INTERVAL = 100;
+
+function initiate() {
+	//get a reference to the canvas
+	ctx = $('#canvas')[0].getContext("2d");
+	
+	// Get the width and height of the canvas
+	WIDTH = $("#canvas").width();
+	HEIGHT = $("#canvas").height();
+	
+	// Draw the Circle at every interval
+	return setInterval(drawAnimation, INTERVAL);
+}
+
+function rect(x,y,w,h) {
+  ctx.beginPath();
+  ctx.rect(x,y,w,h);
+  ctx.closePath();
+  ctx.fill();
+}
+
+function circle(x, y, r, fill) {
+	if (DEBUG && !PASSED_LOOP) {
+		alert("Enter circle(x, y, r, fill):" + "\n"
+				+ "x: " + x + "\n"
+				+ "y: " + y + "\n"
+				+ "r: " + r + "\n"
+				+ "fill: " + fill + "\n");
+	}
+				
+	ctx.fillStyle = fill;
+	ctx.beginPath();
+	ctx.arc(x, y, r, 0, Math.PI*2, true);
+	ctx.closePath();
+	ctx.fill();
+}
+
+function clear() {
+	ctx.clearRect(0, 0, WIDTH, HEIGHT);	
+}
+
+function drawAnimation() {
+	// Clear the Canvas
+	clear();
+	
+	//draw a circle
+	circle(x, y, CIRCLE_RADIUS, "#FF1C0A");
+	
+	// Reverse the direction of change if at the 'Wall' of the game
+	if (x + dx > WIDTH || x + dx < 0)
+		dx = -dx;
+	if (y + dy > HEIGHT || y + dy < 0)
+		dy = -dy;
+	
+	// Establish current position
+	x += dx;
+	y += dy;
+	
+	// DEBUG VAR
+	PASSED_LOOP = true;
+}
+
+initiate();
+
+
+window.addEventListener("load", initiate, false);
+</script>
+</body>
+</html>

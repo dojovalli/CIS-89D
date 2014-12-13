@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lab 16 - indexDB</title>
+<link type="text/css" href="../_css/flexBoxModel.css" rel="stylesheet" media="all"/>
+<style type="text/css">
+.dialog {
+	background-color: #FFF;
+	border: #369 5px solid;	
+	border-radius: 10px;
+	padding: 10px;
+	min-width: 400px;
+	max-width: 700px;
+	max-height: 600px;
+}
+.resultSet {
+	margin-top: 10px;
+	padding: 10px;
+	border: blue 2px solid;
+	border-radius: 6px;
+}
+.resultLabel {
+	font-weight: bold;	
+}
+</style>
+</head>
+
+<body class="flexPage horizontalLinearLayout">
+	
+    <article id="mainContent" class="dialog">
+    	<h1>Here are some of my favorite links</h1>
+    	<section id="linkForm">
+        	<form id="linkForm" action="">
+            	<fieldset>
+                	<legend>Contact Details</legend>
+            	<table>
+                	
+                    <tr>
+                        <td><label>Name of the Site:</label></td>
+                        <td><input type="text" name="siteName" id="siteName" placeholder="CNN" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>URL (Web Address):</label></td>
+                        <td><input type="text" name="siteUrl" id="siteUrl" placeholder="http://www.cnn.com" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Description:</label></td>
+                        <td><input type="text" name="siteDescription" id="siteDescription" placeholder="A News Site" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label>Why you like it:</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><textArea type="text" name="siteNotes" id="siteNotes" placeholder="It has good news."></textArea></td>
+                    </tr>
+                    </table>
+                    </fieldset>
+                    
+                    
+                    <table>
+                        <tr>
+                            <td><input type="submit" name="addLink" id="addLink" value="Add Link" onclick="false" /></td>
+                            <td><input type="button" name="showLinks" id="showLinks" value="Show Links" onclick="false" /></td>
+                        </tr>
+                    </table>
+            </form>
+        </section>
+        <section id="resultDisplay">
+        	<div id="linkList" class="resultSet">
+            &lt;&lt;  No Links &gt;&gt;
+            </div>
+            <div id="linkInfo" class="resultSet">
+            	No Link Selected
+            </div>
+        </section>
+    </article>
+    
+    <script type="text/javascript" src="indexedDB.js"></script>
+
+</body>
+</html>

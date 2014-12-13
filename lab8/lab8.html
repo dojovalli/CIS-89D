@@ -1,0 +1,98 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lab 8 - Mobile Site</title>
+
+<!-- Viewports for Mobile Devices -->
+<meta name=" viewport" content=" width=device-width, initial-scale=1.0">
+
+<!-- Add Media CSS Styles for Print and Mobile -->
+<link rel="stylesheet" media="only print" href="printOnly.css">
+<link rel="stylesheet" media="only screen" href="screenOnly.css">
+
+</head>
+
+<body>
+	<header>
+    	<h1>A Dangerous Net</h1>
+    </header>
+	<nav id="mainMenu">
+    	<a href="http://voyager.deanza.edu/~vallim/index.html">Voyager Student Site</a>
+        <a href="http://www.mattvalli.com/index.html">Student Portfolio</a>
+        <a href="http://www.github.com/dojovalli">Github</a>
+        <a href="https://www.linkedin.com/profile/view?id=378612784&trk=nav_responsive_tab_profile">LinkedIn</a>
+    </nav>
+	<article id="evilTwins">
+	<h1>Wireless Networks</h1>
+    <h2>Evil Twins</h2>
+    
+    <section id="description">
+        <h3>What is an Evil Twin</h3>
+        <p>Evil twin is a term for a rogue Wi-Fi access point that appears to be a legitimate one offered
+        on the premises, but actually has been set up to eavesdrop on wireless communications.</p>
+    
+        <p>An evil twin is the wireless version of the phishing scam. An attacker fools wireless users into
+        connecting a laptop or mobile phone to a tainted hotspot by posing as a legitimate provider.</p>
+    
+        <p>This type of evil twin attack may be used to steal the passwords of unsuspecting users by either
+        snooping the communication link or by phishing, which involves setting up a fraudulent web site and
+        luring people there.</p>
+    </section>
+    
+    <section id="method">
+    	<h3>How it happens</h3>
+        <p>The attacker uses a bogus wireless access point, purporting to provide wireless Internet
+        services, but snooping on the traffic. When the users log into unprotected (non-HTTPS) bank or
+        e-mail accounts, the attacker has access to the entire transaction, since it is sent through their
+        equipment.</p>
+    
+        <p>Unwitting web users are invited to log into the attacker's server with bogus login prompts,
+        tempting them to give away sensitive information such as usernames and passwords. Often users are
+        unaware they have been duped until well after the incident has occurred.</p>
+    
+        <p>Users think they have logged on to a wireless hotspot connection when in fact they have been
+        tricked into connecting to its evil twin by it sending a stronger signal within proximity to the
+        wireless client.</p>
+    
+        <p>Rogue access points are easy to set up, for example using a laptop with a wireless card that
+        acts as an access point (known as "host-ap"), but are hard to trace since they can suddenly be shut
+        off. An attacker can make his own wireless networks that appear to be legitimate by simply giving
+        their access point a similar SSID name to the Wi-Fi network on the premises. The rogue access point
+        can be configured to pass the traffic through to the legitimate access point while monitoring the
+        victim's traffic, or it can simply say the system is temporarily unavailable after obtaining a
+       	username and password.</p>
+    </section>
+    
+    <section id="solutions">
+    	<h3>How to resolve the issues</h3>
+        <p>Virtual private networks or end-to-end encryption (such as TLS/SSL/HTTPS) may be used to protect
+        passwords, e-mail and other sensitive information.</p>
+    
+        <p>Most existing evil twin detection solutions can be classified into two categories. The first
+        kind of solution approaches monitor Radio Frequency (RF) airwaves and/or additional information 	
+        gathered at routers/switches and then compare with a known authorized list. The second kind of 	
+        approaches monitor traffic at the wired side (a traffic aggregation point such as a gateway), and 	
+        determine whether a machine uses wired or wireless connections. Such information is further 	
+        compared with an authorization list to detect if the associated AP is a rogue one. These approaches
+        are limited because they all require the knowledge of an authorization list of APs and/or
+        users/hosts.
+        </p>
+    </section>
+    
+    <section id="additionalResources">
+    	<h3>Additional Resources</h3>
+        <ul class="linkList">
+        	<li><a href="http://en.wikipedia.org/wiki/Evil_twin_(wireless_networks)">Evil Twins on Wikipedia</a></li>
+            <li><a href="http://www.watchguard.com/infocenter/editorial/27061.asp">Anatomy of an Evil Twin Attack</a></li>
+            <li><a href="http://netsecurity.about.com/od/secureyourwifinetwork/a/The-Dangers-Of-Evil-Twin-Wi-Fi-Hotspots.htm">The Dangers of an Evil-Twin Wifi Hotspots</a></li>
+        </ul>
+    </section>
+    
+    </article>
+    
+    <footer>
+    	<h2>Donate to our cause and educate people about vulnerabilities from browsing the web!</h2>
+    </footer>
+
+</body>
+</html>

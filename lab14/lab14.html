@@ -1,0 +1,57 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Drag &amp; Drop</title>
+
+<style type="text/css">
+	.sliderContainer {
+		width: 300px;
+		height: 300px;	
+		float: left;
+		border: 2px black solid;
+	}
+	.quadrant {
+		width: 146px;
+		height: 146px;
+		float: left;
+		border: 2px black solid;
+	}
+	.quadrantContent {
+		margin: 0px;
+		width: 146px;
+		height: 146px;
+		text-align: center;
+		font-size: 120px;
+		color: blue;	
+		background-color: #C1C1C1;
+	}
+	.empty {
+		background-color: #FFF;	
+	}
+</style>
+</head>
+
+<body>
+
+	<article id="sliderGame">
+    	<section id="sliderContainer" class="sliderContainer">
+        	<div id="quadrant1" class="quadrant" draggable="false">
+            	<div id="content1" class="quadrantContent" draggable="true">1</div>
+            </div>
+            <div id="quadrant2" class="quadrant" draggable="false">
+            	<div id="content2" class="quadrantContent" draggable="true">2</div>
+            </div>
+            <div id="quadrant3" class="quadrant" draggable="false">
+            	<div id="content3" class="quadrantContent" draggable="true">3</div>
+            </div>
+            <div id="quadrant4" class="quadrant" draggable="false">
+            	<div id="contentEmpty" class="quadrantContent empty" draggable="false"></div>
+            </div>
+        </section>
+    </article>
+    
+
+	<script type="text/javascript" src="simpleDragAndDrop.js"></script>
+</body>
+</html>

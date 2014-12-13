@@ -1,0 +1,70 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lab 17 - XMLHttpRequest &amp; Ajax</title>
+
+<link type="text/css" href="../_css/flexBoxModel.css" rel="stylesheet" media="all"/>
+<style type="text/css">
+.dialog {
+	background-color: #FFF;
+	border: #369 5px solid;	
+	border-radius: 10px;
+	padding: 10px;
+	min-width: 400px;
+	max-width: 700px;
+	max-height: 600px;
+}
+.result {
+	float: left;
+	color: red;
+	font-size: 24px;
+	visibility: hidden;
+}
+.resultSet {
+	margin-top: 10px;
+	padding: 10px;
+	border: blue 2px solid;
+	border-radius: 6px;
+}
+.resultLabel {
+	font-weight: bold;	
+}
+</style>
+
+</head>
+
+<body class="flexPage horizontalLinearLayout">
+
+	<article id="mainContent" class="dialog">
+    	<section id="userInterface">
+    	<h2>Enter two numbers:</h2>
+        <form id="addNumbers" name="addNumbers" action="post" method="post">
+        	<table>
+            	<tr>
+                	<td><label>First:</label></td>
+                    <td><input type="text" name="num_A" id="num_A" /></td>
+                </tr>
+                <tr>
+                	<td><label>Second:</label></td>
+                    <td><input type="text" name="num_B" id="num_B" /></td>
+                </tr>
+            </table>
+        </form>
+        
+        <p>Click  &lsquo;Ask the Server&rsquo; to add the numbers without refreshing the page.</p>
+        <input type="submit" id="processAjax" value="Ask the Server" />
+        </section>
+        	
+        <section id="results" class="result">
+        	<p>
+                <div class="left">The answer is: &nbsp;</div>
+                <div id="answer" class="left"></div>
+            </p>
+        </section>
+        
+    </article>
+
+	<script type="application/javascript" src="ajax.js"></script>
+</body>
+</html>

@@ -1,0 +1,568 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Midterm</title>
+
+<style type="text/css">
+body {
+	margin: 10px auto;	
+}
+.pageWidth {
+	max-width: 1000px;
+	min-width: 800px;
+}
+.pageAlignCenter {
+	margin: 0 auto;	
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.roundedCorners {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+}
+.pad {
+	padding: 10px;	
+}
+.m2 {
+	margin: 2px;
+}
+.m10 {
+	margin: 10px;
+}
+.mW10 {
+	margin: auto 10px;
+}
+.mH10 {
+	margin: 10px auto;
+}
+
+/* Page Layout */
+body {
+	background-color: #CCC;
+}
+header {
+	background-color: #09F;
+	min-height: 100px;
+}
+nav {
+	background-color: #F90;
+	min-height: 50px;
+}
+article {
+	
+}
+footer {
+	background-color: #F30;
+	min-height: 100px;
+}
+figure {
+	
+}
+figcaption {
+	padding: 10px;	
+}
+
+/* Layout Classes */
+.flexPage {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+}
+.verticalLinearLayout {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+	-moz-flex: 1;
+	-webkit-flex: 1;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+}
+.horizontalLinearLayout {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+	-moz-flex-direction: row;
+	-webkit-flex-direction: row;
+}
+.flexItem {
+  order: <integer>;
+}
+
+	#canvasbox {
+		width: 600px;
+		background-color: #35C16B;
+	}
+	#controls {
+		width: 300px;
+		background-color: #9ABADE;
+		float: left;
+	}
+	#canvasWrapper {
+		margin: auto auto;
+		background-color: #FFFFAC;
+	}
+	#canvas {
+		margin: 3px;
+		border: #88875B 2px solid;
+		/*background-color: #FFFFAC;*/
+		float: left;
+	}
+	#wrapper {
+		background-color: #FFF;
+		border: red 1px solid;
+	}
+</style>
+
+</head>
+
+<body class="pageWidth flexPage">
+<article id="wrapper" class="horizontalLinearLayout roundedCorners m2">
+<section id="canvasbox" class="horizontalLinearLayout roundedCorners pad m2">
+	<!--   -->
+    <div id="canvasWrapper">
+        <canvas id="canvas" class="pageAlignCenter" width="0" height="0">
+        Your browser doesn't support the canvas element
+        </canvas>
+    </div>
+    <!--</div>-->
+</section>
+<section id="controls" class="horizontalLinearLayout roundedCorners pad m2">
+<form id="appControl" action="#" method="post"><br>
+<label>Text:</label><input id="text" placeholder="Your text here" autofocus onKeyUp="drawText();" /><br>
+<label>Text Font:</label> 
+<select id="textFont" onChange="drawText();">
+	<option value="serif" selected="selected">serif</option>
+    <option value="sans-serif">sans-serif</option>
+    <option value="cursive">cursive</option>
+    <option value="fantasy">fantasy</option>
+    <option value="monospace">monospace</option>
+</select><br>
+<label>Font Weight:</label>
+<select id="fontWeight" onChange="drawText();">
+	<option value="normal" selected="selected">normal</option>
+    <option value="bold">bold</option>
+    <option value="bolder">bolder</option>
+    <option value="lighter">lighter</option>
+</select><br>
+<label>Font Style:</label>
+<select id="fontStyle" onChange="drawText();">
+	<option value="normal" selected="selected">normal</option>
+	<option value="italic">italic</option>
+	<option value="oblique">oblique</option>
+</select><br>
+<label>Text Size:</label>
+<input id="textSize"  type="range" min="12" max="170" step="1" value="72" onChange="drawText();"><br>
+<label>Fill Type:</label>
+<select id="fillType" onChange="drawText();">
+	<option value="fill" selected="selected">Color Fill</option>
+	<option value="linear">Linear Gradient</option>
+	<option value="radial">Radial Gradient</option>
+</select><br>
+<label>Text Color:</label><input id="textColor1" type="color" onSelect="drawText();" onChange="drawText();" value="#0202FF" /><br>
+<label>Text Color 2:</label><input id="textColor2" type="color" onSelect="drawText();" onChange="drawText();" value="#FF0000" /><br>
+<label>Fill Or Stroke:</label>
+<select id="fillStroke" onChange="drawText();">
+	<option value="fill" selected="selected">fill</option>
+	<option value="stroke">stroke</option>
+	<option value="both">both</option>
+</select><br>
+<label>Text Baseline:</label>
+<select id="textBaseline" onChange="drawText();">
+	<option value="middle" selected="selected">middle</option>
+	<option value="top">top</option>
+	<option value="hanging">hanging</option>
+    <option value="alphabetic">alphabetic</option>
+	<option value="ideographic">ideographic</option>
+	<option value="bottom">bottom</option>
+</select><br>
+<label>Text Align:</label> 
+<select id="textAlign" onChange="drawText();">
+	<option value="center" selected="selected">center</option>
+	<option value="start">start</option>
+	<option value="end">end</option>
+    <option value="left">left</option>
+	<option value="right">right</option>
+</select><br>
+<label>Alpha:</label>
+<input id="alpha" type="range" min="0" max="1" step=".05" value="1" onChange="drawText();"><br>
+<label>Shadow X:</label>
+<input id="shadowX" type="range" min="-300" max="300" step="1" value="0" onChange="drawText();"><br>
+<label>Shadow Y:</label>
+<input id="shadowY" type="range" min="-200" max="200" step="1" value="0" onChange="drawText();"><br>
+<label>Shadow Blur:</label>
+<input id="shadowBlur" type="range" min="0" max="50" step="1" value="0" onChange="drawText();"><br>
+<label>Shadow Color:</label>
+<input id="shadowColor" type="color" onSelect="drawText();" onChange="drawText();" value="#000000" /><br>
+<label>Canvas Width:</label>
+<input id="canvasWidth"  type="range" min="300" max="700" step="10" value="410" onChange="drawText();"><br>
+<label>Canvas Height:</label>
+<input id="canvasHeight" type="range" min="300" max="500" step="10" value="300" onChange="drawText();"><br>
+<label>Canvas Style Width:</label>
+<input id="canvasStyleWidth" type="range" min="150" max="600" step=".1" value="410" onChange="drawText();"><br>
+<label>Canvas Style Height:</label>
+<input id="canvasStyleHeight"  type="range" min="150" max="600" step=".1" value="300" onChange="drawText();"><br>
+</form>
+</section>
+</article>
+
+<script type="text/javascript">
+// DEBUGING VARS
+var DEBUG = true;
+var DEBUG_NODES = false;
+var DEBUG_INPUT = false;
+var DEBUG_FILL = false;
+var DEBUG_GRADIENT = false;
+var DEBUG_POSITION = false;
+var DEBUG_CANVAS_SIZE = false;
+
+// GLOBAL VARS
+var canvas;
+var text,
+	textFont,
+	fontWeight,
+	fontStyle,
+	textSize,
+	textColor1,
+	textColor2,
+	fillStroke,
+	textBaseline,
+	textAlign,
+	alpha,
+	shadowX,
+	shadowY,
+	shadowBlur,
+	shadowColor,
+	canvasWidth,
+	canvasHeight,
+	canvasStyleWidth,
+	canvasStyleHeight;
+// Text Positioning
+var xPos,
+	yPos;
+	
+function getValue(field) {
+	var text = document.getElementById(field);
+	var value = text.value;
+
+	return value;
+}
+
+function fillOrStroke(message, xPosition, yPosition) {
+	var fillOrStroke = getValue("fillStroke");
+	
+	switch(fillOrStroke) {
+		case "fill":
+			canvas.fillStyle = getValue("textColor1");
+		   	canvas.fillText(message, xPosition, yPosition);
+			break;
+		case "stroke":
+			canvas.strokeStyle = getValue("textColor1");
+			canvas.strokeText(message, xPosition, yPosition);
+			break;
+		case "both":
+			canvas.fillStyle = getValue("textColor1");
+		   	canvas.fillText(message, xPosition, yPosition);
+			canvas.strokeStyle = getValue("textColor2");
+			canvas.strokeText(message, xPosition, yPosition);
+			break;
+	}	
+}
+
+function createGradient(x1, y1, x2, y2, r1, r2, colors, gradientType) {
+	if (DEBUG && DEBUG_NODES) alert("Enter createGradient(x1, y1, x2, y2, r1, r2, colors, gradientType)");
+	if (DEBUG && DEBUG_GRADIENT) {
+		alert("createGradient(x1, y1, x2, y2, r1, r2, colors, gradientType)" + "\n"
+				+ "x1: " + x1 + "\n"
+				+ "y1: " + y1 + "\n"
+				+ "x2: " + x2 + "\n"
+				+ "y2: " + y2 + "\n"
+				+ "r1: " + r1 + "\n"
+				+ "r2: " + r2 + "\n"
+				+ "colors: " + colors + "\n"
+				+ "gradientType: " + gradientType);
+	}
+	
+	var gradient;
+	switch (gradientType) {
+		case "linear":
+		case "Linear":
+		case "LINEAR":
+			if (DEBUG && DEBUG_GRADIENT) alert("Linear Gradient" + "\n" + "gradientType: " + gradientType);
+			gradient = canvas.createLinearGradient(x1, y1, x2, y2);
+			break;
+		case "radial":
+		case "Radial":
+		case "RADIAL":
+			if (DEBUG && DEBUG_GRADIENT) alert("Radial Gradient" + "\n" + "gradientType: " + gradientType);
+			gradient = canvas.createRadialGradient(x1, y1, r1, x1, y2, r2);
+			break;
+		default:
+			alert("You did not provide a valid 'gradientType for the following method:" + "\n"
+					+ 'createGradient(x1, y1, x2, y2, r1, r2, colors, gradientType)');
+	}
+
+	for (i = 0; i < colors.length; i++) {
+		if(DEBUG && DEBUG_GRADIENT) alert("colors[" + i + "]: " + colors[i]);
+		gradient.addColorStop( (i / colors.length) , colors[ i ] );	
+	}
+
+	if (DEBUG && DEBUG_NODES) alert("Exit createGradient(x1, y1, x2, y2, r1, r2, colors, gradientType)");
+	return gradient;
+}
+
+function fillAndStroke(message, xPosition, yPosition, fill, stroke) {
+	var fillOrStroke = getValue("fillStroke");
+	
+	switch(fillOrStroke) {
+		case "fill":
+			canvas.fillStyle = fill;
+		   	canvas.fillText(message, xPosition, yPosition);
+			break;
+		case "stroke":
+			canvas.strokeStyle = stroke;
+			canvas.strokeText(message, xPosition, yPosition);
+			break;
+		case "both":
+			canvas.fillStyle = fill;
+		   	canvas.fillText(message, xPosition, yPosition);
+			canvas.strokeStyle = stroke;
+			canvas.strokeText(message, xPosition, yPosition);
+			break;
+	}	
+}
+
+function fillType(message, xPosition, yPosition) {
+	// Local Variables
+	var fill;
+	var stroke;
+	// Calulate the positioning of gradient coloring
+	var width = getValue("canvasWidth");
+	var height = getValue("canvasHeight");
+	if (DEBUG && DEBUG_FILL) alert("width: " + width + "\n" + "height: " + height);
+	// Set the r1/r2 to 0 because they do not apply to fill/linear gradients
+	var r1 = r2 = 0;
+	var x1, x2, y1, y2;
+	// Get the Fill Type
+	var fillOrGrad = getValue("fillType");
+	// Get the Fill Colors
+	var colors = [ getValue("textColor1"), getValue("textColor2") ];
+	
+	
+	if (DEBUG && DEBUG_FILL) alert(colors.toString());
+	
+	switch(fillOrGrad) {
+		case "fill":
+			if (DEBUG && DEBUG_FILL) alert("using solid fill");
+			//fillOrStroke(message, xPosition, yPosition);
+			// Fill is color1 and Stroke is color 2
+			fill = colors[0];
+			stroke = colors[1];
+			break;
+		case "linear":
+			// Calculate the positioning of gradient
+			var textWidth = Number(getValue("textSize"));
+			var exteriorWidth = width - textWidth;
+			x1 = exteriorWidth / 2;
+			x2 = x1 + textWidth;
+			
+			var textHeight = getValue("textSize");
+			var exteriorHeight = height - textHeight;
+			y1 = exteriorHeight / 2;
+			y2 = y1 + textHeight;
+			
+			if (DEBUG && DEBUG_FILL) alert("using linear grad:"
+					+ "xPosition: " + xPosition + "\n"
+					+ "yPosition: " + yPosition + "\n"
+					+ "xPosition: " + xPosition + "\n"
+					+ "yPosition: " + yPosition + "\n"
+					+ "y2: " + y2 + "\n");
+		
+			// Both the Fill & Stroke are the Gradient
+			stroke = fill = createGradient(	x1, 
+											0,
+											x2,
+											0,
+											r1,
+											r2,
+											colors,
+											"linear");
+												
+			if (DEBUG && DEBUG_FILL) alert(fill);
+			break;
+		case "radial":
+		case "Radial":
+		case "RADIAL":
+			if (DEBUG && DEBUG_FILL) alert("using radial grad");
+			var x1 = (getValue("canvasWidth") / 2 );
+			var x2 = width;
+			var y1 = (getValue("canvasHeight") / 2); 
+			// Number(getValue("textSize"));
+			var y2 = height;
+			r1 = 5;
+			r2 = Number(getValue("textSize"));
+			
+			// Both the Fill & Stroke are the Gradient
+			stroke = fill = createGradient(	x1, 
+												y1,
+												x1,
+												y1,
+												0,
+												x1,
+												colors,
+												"radial");
+												
+			if (DEBUG && DEBUG_FILL) alert("fill: " + fill);
+			break;
+	}	
+	// Set the fill
+	//canvas.fillStyle = fill;
+	//canvas.fillText(message, xPosition, yPosition);
+	// Set the Fill & Stroke
+	fillAndStroke(message, xPosition, yPosition, fill, stroke);
+}
+
+function displayFormattedText() {
+	// GET THE TEXT
+	text = getValue("text");
+	if (text == "") text = "Type text here";
+	
+	// FONT
+	font = getValue("textFont"); 
+	textSize = getValue("textSize");
+	fontWeight = getValue("fontWeight");
+	fontStyle = getValue("fontStyle");
+	fontString = fontStyle + " " + fontWeight + " " + textSize + "px" + " " + font;
+	
+	// Calculate Font Position
+	var textWidth = canvas.measureText(text).width;
+	positionX = canvasWidth / 2;
+	positionY = canvasHeight / 2;
+	if (DEBUG && DEBUG_POSITION) {
+		alert("Debug Position" + "\n"
+				+ "positionX: " + positionX + "\n"
+				+ "positionY: " + positionY + "\n");	
+	}	
+}
+	
+// HELPER METHODS
+function drawText() {
+	// Setup the canvas
+	var elem=document.getElementById('canvas');
+	canvas=elem.getContext('2d');
+	canvas.clearRect(0, 0, canvas.width, canvas.height);
+	
+	// Get Canvas H/W
+	//canvasWidth = getValue("canvasWidth");
+	//canvasHeight = getValue("canvasHeight");
+	
+	
+	
+	// COLORs
+	textColor1 = getValue("textColor1");
+	textColor2 = getValue("textColor2");
+	shadowColor = getValue("shadowColor");
+	
+	// POSITIONING
+	textAlign = getValue("textAlign");
+	textBaseline = getValue("textBaseline");
+	
+	// COLOR EFFECTS
+	alpha = getValue("alpha");
+	shadowX = getValue("shadowX");
+	shadowY = getValue("shadowY");
+	shadowBlur = getValue("shadowBlur");
+	
+	// CANVAS CHANGE
+	canvasWidth = getValue("canvasWidth");
+	canvasHeight = getValue("canvasHeight");
+	
+	
+	// GET THE TEXT
+	text = getValue("text");
+	if (text == "") text = "Type text here";
+	
+	// FONT
+	font = getValue("textFont"); 
+	textSize = getValue("textSize");
+	fontWeight = getValue("fontWeight");
+	fontStyle = getValue("fontStyle");
+	fontString = fontStyle + " " + fontWeight + " " + textSize + "px" + " " + font;
+	
+	// Calculate Font Position
+	var textWidth = canvas.measureText(text).width;
+	positionX = (canvasWidth - textWidth) / 2;
+	positionY = (canvasHeight - textSize) / 2;
+	if (DEBUG && DEBUG_POSITION) {
+		alert("Debug Position" + "\n"
+				+ "positionX: " + positionX + "\n"
+				+ "positionY: " + positionY + "\n");	
+	}
+	
+	// LOG
+	/*
+	alert("VALUES:" + "\n"
+			+ "text: " + text + "\n"
+			+ "fontString: " + fontString + "\n");
+			*/
+	// CANVAS STYLE PROPERTIES
+	canvas.canvas.width = canvasWidth;
+	canvas.canvas.height = Number(canvasHeight);
+	// Get the Width & Height Styles using JavaScript
+	canvasStyle = document.getElementById("canvas");
+	if(DEBUG && DEBUG_CANVAS_SIZE) alert("currentCanvasStyleWidth: " + canvasStyle.width.toString() + "\n"
+			+ "currentCanvasStyleHeight: " + canvasStyle.height.toString() + "\n"
+			+ "canvasStyleWidth: " + getValue("canvasStyleWidth") + "\n"
+			+ "canvasStyleHeight: " + getValue("canvasStyleHeight") + "\n");
+	canvasStyle.style.width = getValue("canvasStyleWidth");
+	canvasStyle.style.height = getValue("canvasStyleHeight");
+	
+	//canvas.scale(getValue("canvasStyleWidth"), getValue("canvasStyleHeight"));
+	
+	
+	// UPDATE THE CANVAS TEXT
+	canvas.font = fontString;
+	canvas.textAlign=textAlign;
+	canvas.textBaseline=textBaseline;
+	
+	// COLOR EFFECTS
+	canvas.globalAlpha= alpha;
+	canvas.shadowColor = shadowColor;
+	canvas.shadowOffsetX = shadowX;
+	canvas.shadowOffsetY = shadowY;
+	canvas.shadowBlur = shadowBlur;
+	
+	displayFormattedText();
+	
+	fillType(text, positionX, positionY);
+}
+	
+	/* MAIN METHOD */
+function initiate(){
+
+	// Draw the Logo
+	drawText();
+
+}
+
+window.addEventListener("load", initiate, false);
+</script>
+</body>
+</html>

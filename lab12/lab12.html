@@ -1,0 +1,123 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+<style type="text/css">
+	
+	/* Resets */
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0px;	
+	}
+	
+	/* Container Styles */
+	.contentContainer {
+		border: 1px white solid;
+		background-color: #666;	
+	}
+	.mainContent {
+		margin: 10px;	
+		padding: 10px;
+	}
+	.locationContent {
+		color: black;	
+	}
+	.messageContainer {
+		margin: 10px 0px;	
+	}
+	.locationContent {
+		border: 2px #7F0300 solid;	
+	}
+	
+	/* Re-usable Contextual Styles */
+	.roundedCorners {
+		border-radius: 5px;	
+	}
+	.centerText {
+		color: #FFF;
+		text-align: center;	
+	}
+	
+	/* Background Styles */
+	.error {
+		background-color: #FFC;	
+	}
+	.success {
+		background-color: #6F6;	
+	}
+	.grey {
+		background-color: #CCC;	
+	}
+	.maroon {
+		background-color: #7F0300;	
+	}
+	.white {
+		background-color: #FFFFFF;	
+	}
+	
+	
+</style>
+</head>
+
+<body class="grey">
+	<div id="pageWrapper" class="contentContainer">
+        <header class="centerText maroon">
+            <h1>Odometer</h1>
+        </header>
+        
+        <nav>
+        
+        </nav>
+        
+        <article id="odometer" class="mainContent roundedCorners white">
+        	<!-- BANNER -->
+            <section id="locationBanner" class="centerText maroon roundedCorners">
+                <h2>Your Location</h2>
+            </section>
+            
+            <!-- APPLICATION STATUS & MESSAGES -->
+            <section id="messageContainer" class="messageContainer error">
+            	<!-- Dynamically Generated Content from Odometer.js -->
+                Error: The user has not enabled the Geolocation feature with website!
+            </section>
+            
+            <!-- GEOLOCATION DETAILS -->
+            <section id="locationContent" class="locationContent roundedCorners">
+            	<table>
+                	<tr>
+                    	<td><label>Latitude:</label></td>
+                        <td id="latitudeValue"></td>
+                    </tr>
+                    <tr>
+                    	<td><label>Longitude:</label></td>
+                        <td id="longitudeValue"></td>
+                    </tr>
+                    <tr>
+                    	<td><label>Accuracy:</label></td>
+                        <td id="accuracyValue"></td>
+                    </tr>
+                    <tr>
+                    	<td><label>Timestamp:</label></td>
+                        <td id="timeValue"></td>
+                    </tr>
+                    <tr>
+                    	<td><label>Current distance travelled:</label></td>
+                        <td id="currentDistanceValue"></td>
+                    </tr>
+                    <tr>
+                    	<td><label>Total distance travelled:</label></td>
+                        <td id="totalDistanceValue"></td>
+                    </tr>
+                </table>
+            </section>
+        </article>
+        
+        <footer class="centerText maroon">
+            <h3>&copy; Renaissance Arts Media</h3>
+        </footer>
+	</div>
+    
+    <!-- Import the JavaScript App -->
+    <script type="text/javascript" src="Odometer.js"></script>
+</body>
+</html>

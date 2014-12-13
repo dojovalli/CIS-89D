@@ -122,12 +122,40 @@ figcaption {
 	-o-transition: all 0.5s ease 1s;
 	transition: all 0.5s ease 1s;
 }
-.transStateNormal {
-	opacity: 1.0;
-}
-.transStateActive {
+.transState {
 	opacity: 0.5;
 }
+.transState:hover {
+	opacity: 1.0;
+	background-color: #099;
+}
+.transform:hover {
+	-o-transform: scale(2) rotate(-35deg) translate(-100px,5px);
+	-ms-transform: scale(2) rotate(-35deg) translate(-100px,5px);
+	-moz-transform: scale(2) rotate(-35deg) translate(-100px,5px);	
+	-webkit-transform: scale(2) rotate(-35deg) translate(-100px,5px);	
+}
+
+/* Animation styles */
+.fadeIn {
+	/*animation: fadeIn 5s;*/
+	animation-name: fadeIn;
+	animation-duration: 3s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;	
+}
+.delayAnimation {
+	animation-delay: 2s;
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0.0;
+	}
+	to {
+		opacity: 1.0;	
+	}
+}
+
 
 /* Appearence Classes */
 .textShadowRed {
@@ -205,17 +233,17 @@ figcaption {
 
 </head>
 
-<body class="flexPage pageWidth pageAlignCenter">
+<body class="flexPage pageWidth pageAlignCenter fadeIn">
 
-	<div id="pageWrapper">
+	<div id="pageWrapper" class="fadeIn">
     	
         <header>
         	<hgroup>
                 <div class="logo left">
-                    <img class="opacity" src="public_assets/lab1/hbo_logo.png" width="360" height="270" alt="HBO logo">
+                    <img class="transition transState" src="../public_assets/lab1/hbo_logo.png" width="360" height="270" alt="HBO logo">
                 </div>
                 <div class="pageTitle">
-                    <h1 class="right m10 textShadowRed">Silicon Valley</h1><br clear="all" />
+                    <h1 class="right m10 textShadowRed transition transform">Silicon Valley</h1><br clear="all" />
                     <h2 class="right m10 textShadowRed">Season 2.0.1</h2><br clear="all" />
                 </div>
             </hgroup>
@@ -231,12 +259,12 @@ figcaption {
         
         <div id="container" class="verticalLinearLayout">
         
-        	<article id="siliconValleyReturns">
+        	<article id="siliconValleyReturns fadeIn">
             
                 <section id="pitch">
                     
                         <figure id="siliconValleyBanner" class="pageAlignCenter">
-                            <img src="public_assets/lab1/siliconValleyBanner.jpg" width="820" height="388" alt="Silicon Vally Banner">
+                            <img src="../public_assets/lab1/siliconValleyBanner.jpg" width="820" height="388" alt="Silicon Vally Banner">
                         </figure>
                         
                     <div id="pitchContent" class="horizontalLinearLayout roundedCorners m10 gradientBlue boxShadowBlack"> 
@@ -262,7 +290,7 @@ figcaption {
                             <h3>OWN IT NOW!</h3>
                             <figure id="season1_DVD">
                             <div id="dvdSaleImg">
-                            	<img src="public_assets/lab1/Season_1_DVD.jpg" width="100" height="100" alt="Silicon Valley - Season 1 - DVD Set" />
+                            	<img src="../public_assets/lab1/Season_1_DVD.jpg" width="100" height="100" alt="Silicon Valley - Season 1 - DVD Set" />
                             </div><!-- End of #dvdSaleImg -->
                             <div class="dvdSales">
                                 <p>Season 1 - DVD package of HBO's hit series Silicon Valley</p>
@@ -284,7 +312,7 @@ figcaption {
                     <!-- Character - Richard Henderson -->
                     <figure id="richardHenderson" class="character Odd roundedCorners horizontalLinearLayout boxShadowBlack">
                         <div class="photo left">
-                            <img class="figureImg" src="public_assets/lab1/Richard_Henderson.jpg" width="580" height="295" alt="Richard Henderson">
+                            <img class="figureImg" src="../public_assets/lab1/Richard_Henderson.jpg" width="580" height="295" alt="Richard Henderson">
                         </div><!-- End of .photo -->
                         <figcaption>
                         <h3>RICHARD HENDERSON</h3>
@@ -307,7 +335,7 @@ figcaption {
                         </figcaption>
                     
                         <div class="photo left">
-                            <img class="figureImg" src="public_assets/lab1/Erlich_Bachmann.jpg" width="580" height="328">
+                            <img class="figureImg" src="../public_assets/lab1/Erlich_Bachmann.jpg" width="580" height="328">
                         </div><!-- End of .photo -->
                         
                     </figure>
@@ -315,7 +343,7 @@ figcaption {
                     <!-- Character - Jared Dunn -->
                     <figure id="JaredDunn" class="character Odd roundedCorners horizontalLinearLayout boxShadowBlack">
                         <div class="photo left">
-                            <img class="figureImg" src="public_assets/lab1/Jared_Dunn.jpg" width="580" height="328" alt="Jared Dunn">
+                            <img class="figureImg" src="../public_assets/lab1/Jared_Dunn.jpg" width="580" height="328" alt="Jared Dunn">
                         </div><!-- End of .photo -->
                         
                         <figcaption>
@@ -339,7 +367,7 @@ figcaption {
                         </figcaption>
                         
                         <div class="photo left">
-                            <img class="figureImg" src="public_assets/lab1/Denish.jpg" width="580" height="328" alt="Denish">
+                            <img class="figureImg" src="../public_assets/lab1/Denish.jpg" width="580" height="328" alt="Denish">
                         </div><!-- End of .photo -->
                         
                     </figure>
@@ -347,7 +375,7 @@ figcaption {
                     <!-- Character - Gilfoyle -->
                     <figure id="Gilfoyle" class="character Odd roundedCorners horizontalLinearLayout boxShadowBlack">
                         <div class="photo left">
-                            <img class="figureImg" src="public_assets/lab1/Gilfoyle.jpg" width="580" height="328">
+                            <img class="figureImg" src="../public_assets/lab1/Gilfoyle.jpg" width="580" height="328">
                         </div><!-- End of .photo class -->
                         <figcaption>
                             <h3>GILFOYLE</h3>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>CIS89D - Lab1 - Ad</title>
+
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+	<header>
+    	<hgroup>
+        	<figure id="hboLogo">
+            	<img src="../public_assets/lab1/hbo_logo.png">
+            </figure>
+            <h1>Silicon Valley</h1>
+            <h2>Season 2.0.1</h2>
+        </hgroup>
+    </header>
+	
+    <article id="siliconValleyReturns">
+    	<figure id="siliconValleyBanner">
+        	<img src="../public_assets/lab1/siliconValleyBanner.jpg" />
+        </figure>
+    	<section id="pitch">
+    	<h2>Hit Series return September 22nd!</h2>
+            <p>
+            The nerds of Silicon Valley return this Fall to HBO with new version problems.
+            Their victory at Tech-Crunch Disrupt have set the standards high and now Richard Hendricks
+            is faced with decisions that effect everyone he cares about.
+            </p>
+            <p>
+            Build apps is hard, but building a company projected at a multi-Billion dollar value is hard in epic proportions.
+            Who would have thought a company like PidedPiper could compete with the big guys like Houli.
+            </p>
+            <p>
+            Erlich Bachmann, Dinesh, Peter Gregory and Jared Dunn support Richard through his topsy-turvy adventure. Spirits are
+            high, and so is some of the help. This rag-tag team wants to roll 'High Roller' style, but breaking into the rich and
+            famous crowd is no easy task.
+            </p>
+        </section>
+        <section id="characters">
+        	<h2>Characters</h2>
+        	<figure id="richardHenderson" class="character">
+            	<img src="../public_assets/lab1/Richard_Hederson.jpg" />
+                <h3>RICHARD HENDERSON</h3>
+                <p>
+                C.E.O and Founder of PidedPiper - a lossless compression format that is quickly revolutionizing the effect of 
+                cloud computing.
+                </p>
+            </figure>
+            <figure id="erlichBachmann" class="character">
+            	<img src="../public_assets/lab1/Erlich_Bachmann.jpg" />
+                <h3>ERLICH BACHMANN</h3>
+                <p>
+                Partner with Richard, Erlich Bachmann's confidence and eccentric character fill the void of Richard's doubts.
+                Although Bachmann is often far out there, he often has moments of brillance and inspiration.
+                </p>
+            </figure>
+            <figure id="Denish" class="character">
+            	<img src="../public_assets/lab1/Denish.jpg" />
+                <h3>DENISH</h3>
+                <p>
+                Software Engineer for PidedPiper that has lust for many women. His inexperience with women is on the cusp of
+                of something great.
+                </p>
+            </figure>
+            <figure id="Gilfoyle" class="character">
+            	<img src="../public_assets/lab1/Gilfoyle.jpg" />
+                <h3>PETER GREGORY</h3>
+                <p>
+                Dry, crass, and demonic, Gilfoyle lightens the mood with his sarcastic humor.
+                </p>
+            </figure>
+            <figure id="JaredDunn" class="character">
+            	<img src="../public_assets/lab1/Jared_Dunn.jpg" />
+                <h3>JARED DUNN</h3>
+                <p>
+                A business brain but social outcast, Jared Dunn might have found a group of friends that actually appriciates his 
+                awkward shortcomings.
+                </p>
+            </figure>
+    </article>
+    
+    <aside>
+    	<h3>DOWNLOAD</h3>
+    	<figure id="season1_DVD">
+    	<img src="../public_assets/lab1/Season_1_DVD.jpg" />
+        <p>Season 1 - DVD package of HBO's hit series Silicon Valley</p>
+        <form action="http://www.hbo.com/silicon-valley">
+        	<button id="purchase_SV_s1" value="Add to Cart">Add to Cart</button>
+        </form>
+        <a href="https://itunes.apple.com/us/tv-season/silicon-valley-season-1/id849050573">Buy on iTunes</a><br />
+        <a href="https://play.google.com/store/tv/show/Silicon_Valley?id=Y5cw5EDM0bk&hl=en">Buy on GooglePlay</a><br />
+        </figure>
+    </aside>
+    
+    
+	<footer>
+    	<h3>Beta's over!
+    </footer>
+
+</body>
+</html>
